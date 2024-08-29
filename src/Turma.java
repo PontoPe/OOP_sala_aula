@@ -5,6 +5,7 @@ public class Turma {
     private String turma;
     private List<Aluno> alunos = new ArrayList<Aluno>();
     private Professor professor;
+    private String disciplina;
 
     public Turma(String turma) {
         this.turma = turma;
@@ -28,5 +29,13 @@ public class Turma {
 
     public Professor getProfessor() {
         return this.professor;
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+
+    public String getDisciplina() {
+        return disciplina;
     }
 }

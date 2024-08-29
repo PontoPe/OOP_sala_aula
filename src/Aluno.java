@@ -4,8 +4,9 @@ public class Aluno {
     private String email;
     private String cpf;
     private String turma;
+    private String matricula;
 
-    public Aluno(String nome, String dataNasc, String email, String cpf, String turma) {
+    public Aluno(String matricula, String nome, String dataNasc, String email, String cpf, String turma) {
         this.name = nome;
         this.dataNasc = dataNasc;
         this.email = email;
@@ -30,4 +31,11 @@ public class Aluno {
     }
 
 
+    public String getDataNasc() {
+        return this.dataNasc;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
 }

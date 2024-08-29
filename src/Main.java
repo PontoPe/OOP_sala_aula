@@ -17,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Aluno MarinaMartins = new Aluno("Marina", "03/03/2001", "pegradowski@gmail.com", "02902376904", "3");
+        Aluno MarinaMartins = new Aluno("12","Marina", "03/03/2001", "pegradowski@gmail.com", "02902376904", "3");
         sala3Alunos.add(MarinaMartins);
         turma3.addAluno(MarinaMartins);
         Scanner scanner = new Scanner(System.in);
@@ -28,6 +28,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nome do aluno:");
         String name = scanner.next();
+        System.out.println("Matrícula do aluno:");
+        String matricula = scanner.next();
         System.out.println("Data de nascimento do aluno:");
         String dataNasc = scanner.next();
         System.out.println("Email do aluno:");
@@ -36,7 +38,7 @@ public class Main {
         String cpf = scanner.next();
         System.out.println("Turma do aluno (1, 2, ou 3):");
         String turma = scanner.next();
-        Aluno aluno = new Aluno(name, dataNasc, email, cpf, turma);
+        Aluno aluno = new Aluno(matricula, name, dataNasc, email, cpf, turma);
         switch (turma) {
             case "1":
                 sala1Alunos.add(aluno);
@@ -56,7 +58,7 @@ public class Main {
 
     public static void perguntar() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Cadastrar um novo aluno? (C)\nCadastrar um novo professor? (P)\nListar alunos de uma sala? (L)\nListar professores de uma sala? (T)");
+        System.out.println("Cadastrar um novo aluno? (C)\nCadastrar um novo professor? (P)\nListar alunos de uma sala? (L)\nListar professores de uma sala? (T)\nMostrar INFO de aluno? (I)\nListar disciplinas? (D)");
         String option = scanner.next();
         switch(option) {
             case "C":
@@ -131,6 +133,43 @@ public class Main {
                     default:
                         System.out.println("Favor digitar 1, 2 ou 3");
                 }
+                break;
+            case "I":
+                System.out.println("Matricula do aluno:");
+                String matricula = scanner.next();
+                for (Aluno aluno : sala1Alunos) {
+                    if (aluno.getMatricula().equals(matricula)) {
+                        System.out.println("Nome: " + aluno.getNome());
+                        System.out.println("Data de nascimento: " + aluno.getDataNasc());
+                        System.out.println("Email: " + aluno.getEmail());
+                        System.out.println("CPF: " + aluno.getCpf());
+                        System.out.println("Ano de nascimento: " + aluno.getAnoNasc());
+                    }
+                }
+                for (Aluno aluno : sala2Alunos) {
+                    if (aluno.getMatricula().equals(matricula)) {
+                        System.out.println("Nome: " + aluno.getNome());
+                        System.out.println("Data de nascimento: " + aluno.getDataNasc());
+                        System.out.println("Email: " + aluno.getEmail());
+                        System.out.println("CPF: " + aluno.getCpf());
+                        System.out.println("Ano de nascimento: " + aluno.getAnoNasc());
+                    }
+                }
+                for (Aluno aluno : sala3Alunos) {
+                    if (aluno.getMatricula().equals(matricula)) {
+                        System.out.println("Nome: " + aluno.getNome());
+                        System.out.println("Data de nascimento: " + aluno.getDataNasc());
+                        System.out.println("Email: " + aluno.getEmail());
+                        System.out.println("CPF: " + aluno.getCpf());
+                        System.out.println("Ano de nascimento: " + aluno.getAnoNasc());
+                    }
+                }
+                break;
+            case "D":
+                System.out.println("Disciplinas:");
+                System.out.println("1: " + turma1.getDisciplina());
+                System.out.println("2: " + turma2.getDisciplina());
+                System.out.println("3: " + turma3.getDisciplina());
                 break;
             default:
                 System.out.println("Favor digitar C, P, L ou T");
